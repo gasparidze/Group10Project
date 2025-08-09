@@ -12,8 +12,41 @@ package org.example.oop;
  * 1) инициализация чего-либо - это создание/заполнение чего-либо
  * 2) сигнатура метода - это название метода + его входные параметры + возвращаемое значение
  * 3) конкатенация строк - это соединение строк через оператор плюс (+)
+ * 4) локальная переменная - это переменная, область видимости которой распространяется только на определнный блок кода
+ * и после выхода из этого блока кода эта переменная уничтожается
+ * в качестве блока кода может быть метод, статичный/нестатичный блок, конструктор
+ * 5) debugger - это инструмент в idea, который позволяет построчно изучать код
+ * 6) чтобы остановить компилятор на какой-то конкретной строчке кода для ее изучения используются breakpoints (точки останова)
+ *
+ * ООП - объекто-ориентированное программирование, в основе которого лежат понятия объект и класс
+ * ООП есть 4 основных принципа:
+ *
+ * 1) инкапсуляция - сокрытие внутренней структуры объекта от внешних воздействий с помощью обращения к нему только через методы самого объекта.
+ * Объединение в один класс свойств и методов.
+ * 2) наследование
+ * 3) полиморфизм
+ * 4) абстракция
  */
 public class Human {
+    /**
+     * ключевое слово static говорит о том, что сущность принадлежит классу, а не объекту
+     * статичным может быть почти что угодно: класс, метод, поле, блок и т д
+     * т.е. kseniya.PI - мы не можем, но можем сделать так Human.PI, потому что статичная переменная принадлежит
+     * классу, а не объекту
+     *
+     * final - ключевое слово, которое означает, что какую-то сущность мы не можем переопределить, т.е. присвоить новое значение
+     * final применяется к полям, локальным переменным, констуктору, классы и т д
+     *
+     * есть несколько видом naming case/convention:
+     * 1) camelCase (верблюд) - setBalance
+     * 2) snake_case - set_balance
+     * 3) kebab-case - set-balance
+     *
+     * Как правило, всегда и везде, сам код пишется через camelCase, а константы и именования чего-либо в БД - через snake_case
+     */
+    public static final double PI = 3.14;
+    public static final String MTC_COMPANY = "Mts";
+
     /**
      * Модификаторы доступа контролируют видимость свойств/методов/классов/констукторов/блоков кода нашего объекта
      * существуют 4 модификатора доступа:
@@ -27,6 +60,58 @@ public class Human {
     private double weight;
     private double height;
     private int age;
+    private int balance = 1000;
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance1) {
+        if(name == "Kseniya" || name == "Polina" || name == "Kate"){
+            this.balance = balance1;
+        } else {
+            System.out.println("Иди работай!");
+        }
+    }
+
+    /**
+     * Мы можем это все быстро сгенерировать, для этого есть горячие клавиши
+     * для win: alt + insert
+     */
+    public String getName(){
+        return name;
+    }
+
+    /**
+     * this - означет ссылка на объект, на котором вызываем этот метод
+     */
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     /**
      * Конструктор - это некий блок кода, который отрабатывает при создании объекта, фактически с помощью конструктора
@@ -46,11 +131,11 @@ public class Human {
         System.out.println("hello from constructor");
     }
 
-    public Human(String newName, double newHeight, double newWeight, int newAge){
-        name = newName;
-        height = newHeight;
-        weight = newWeight;
-        age = newAge;
+    public Human(String name , double weight , double height , int age) {
+        this.name = name;
+        this.weight = weight;
+        this.height = height;
+        this.age = age;
     }
 
     public Human(String newName){
@@ -70,8 +155,22 @@ public class Human {
      * 3) название метода
      * 4) входные параметры в формате: <тип данных1> + <название переменной1>, ..., <тип данныхN> + <название переменнойN>
      * 5) если тип возвращаемого значение не void, то тогда само значение возвращаем с помощью ключевого слова return
+     *
+     * Перегрузка методов - это способ написания/задания методов с одинаковым названием, но разной сигнатурой
      */
     public void sayHello(String name){
         System.out.println("hello from " + name);
+    }
+
+    public String sayHello(int age){
+        return "my age " + age;
+    }
+
+    public void sayHello(){
+        System.out.println("hello from ");
+    }
+
+    public void sayHello(String fromName, String toName){
+        System.out.println("hello from " + fromName + " to: " + toName);
     }
 }

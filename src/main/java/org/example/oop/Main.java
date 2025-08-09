@@ -10,6 +10,7 @@ public class Main {
          * слева мы прописываем тип данных (Human) и название переменной (artur, kseniya, polina)
          * справа мы создаем объект с помощью ключевого слова new
          * new - говорит компилятору, что нужно выделить некоторую область памяти в оперативке под новый объект
+         * и ссылка на этот объект помещается в переменную
          */
 //        Human artur = new Human();
 //        artur.name = "Artur";
@@ -37,14 +38,31 @@ public class Main {
 //        System.out.println(function(2));
 
         Human artur = new Human("Artur", 72.2, 181, 26);
+        System.out.println(artur);
+        artur.setName("Artur1");
+        System.out.println(artur.getBalance());
+        artur.setBalance(0);
+        System.out.println(artur.getBalance());
+
 
         Human kseniya = new Human("Kseniya", 170, 27, 60);
-
-        Human polina = new Human("Polina",  175,56, 20);
-
-        Human katya = new Human();
-
-        Human vasya = new Human("Vasya");
+        System.out.println(kseniya);
+//        kseniya.setName("kseniya");
+        System.out.println(kseniya.getBalance());
+        kseniya.setBalance(500);
+        System.out.println(kseniya.getBalance());
+//
+//        Human polina = new Human("Polina",  175,56, 20);
+//        System.out.println(polina);
+//
+//        Human katya = new Human();
+//        katya.setName("Kate");
+//        System.out.println(katya.getName());
+//
+//        Human vasya = new Human("Vasya");
+//        vasya.sayHello();
+//        vasya.sayHello("Vasya");
+//        vasya.sayHello("Vasya", "Kate");
     }
 
     /**
