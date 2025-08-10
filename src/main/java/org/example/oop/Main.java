@@ -59,10 +59,10 @@ public class Main {
 //        katya.setName("Kate");
 //        System.out.println(katya.getName());
 //
-//        Human vasya = new Human("Vasya");
-//        vasya.sayHello();
-//        vasya.sayHello("Vasya");
-//        vasya.sayHello("Vasya", "Kate");
+        Human vasya = new Human("Vasya");
+        vasya.sayHello();
+        vasya.sayHello("Vasya");
+        vasya.sayHello("Vasya", "Kate");
     }
 
     /**
