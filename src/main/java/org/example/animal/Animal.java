@@ -11,9 +11,14 @@ package org.example.animal;
  * Без наследования полиморфизм был бы невозможен.
  * Сушествует 2 типа полиморфизма:
  * 1) ad-hoc (мнимый) полиморфизм - это перегрузка методов
- * 2) параметрический (истинный) полиморфизм
+ * 2) параметрический (истинный) полиморфизмъ
+ *
+ * Абстракция означает разработку классов, исходя из их функциональности, не принимая во внимание реализацию деталей.
+ * Абстрактный класс представляет из себя некий макет/чертеж без включения фактической реализации.
+ * Нельзя создать объект абстрактного класса, т.к. это нелогично, т.е. нельзя создать какой-то конкретный объект чертежа/макета
+ * Абстрактный класс без абстрактных методов может быть, но тогда он не имеет смысла
  */
-public class Animal {
+public abstract class Animal {
     private double weight;
     private String environment;
     private String nickname;
@@ -24,9 +29,14 @@ public class Animal {
         this.nickname = nickname;
     }
 
-    public void saySmth(){
-        System.out.println("Animal is saying");
-    }
+    /**
+     * Абстрактный метод не имеет реализации, на то он и абстракция
+     */
+    public abstract void saySmth();
+
+    public abstract void makeSound();
+
+    public abstract void eat();
 
     public double getWeight() {
         return weight;

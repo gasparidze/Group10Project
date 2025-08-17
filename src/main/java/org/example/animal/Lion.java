@@ -13,6 +13,16 @@ public class Lion extends Animal{
         System.out.println("Lion is saying");
     }
 
+    @Override
+    public void makeSound() {
+        System.out.println("lion makes sound");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("lion is eating");
+    }
+
     public String getGrivaColor() {
         return grivaColor;
     }

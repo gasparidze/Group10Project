@@ -22,11 +22,25 @@ public class Tiger extends Animal{
      * Мы можем переопределять метода класса родителя, т.е. мы можем реализовывать какую-то свою логику в этом методе,
      * но сигнатуру менять нельзя
      * @Override - аннотация Override проверяет как раз-таки сигнатуру нашего метода
+     *
+     * Если метод абстрактный в классе родителе, то компилятор нас обяжет реализовать этот метод во всех классах наследники
+     * у абстрактного класса должна быть реализация и если ее нет в классе родителе, то мы обязаны задать реализацию в классах наследниках
      */
     @Override
     public void saySmth() {
         System.out.println("Tiger is saying");
     }
+
+    @Override
+    public void makeSound() {
+        System.out.println("tiger makes sound");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("tiger is eating");
+    }
+
 
     public void uniqueMethod(){
         System.out.println("alalala");

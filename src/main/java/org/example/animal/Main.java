@@ -33,6 +33,22 @@ public class Main {
         }
     }
 
+//    public static void say(Tiger tiger){
+//        tiger.saySmth();
+//    }
+//
+//    public static void say(Lion lion){
+//        lion.saySmth();
+//    }
+//
+//    public static void say(Monkey monkey){
+//        monkey.saySmth();
+//    }
+
+    /**
+     * Блогодаря наследованию мы можем в качестве входного параметра указать класс родитель и передавать туда остальные
+     * классы наследники
+     */
     public static void say(Animal animal){
         /**
          * вот здесь и проявляется полиморфизм
