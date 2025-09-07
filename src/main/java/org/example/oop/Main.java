@@ -12,6 +12,9 @@ public class Main {
          * new - говорит компилятору, что нужно выделить некоторую область памяти в оперативке под новый объект
          * и ссылка на этот объект помещается в переменную
          */
+        Human polina = new Human();
+        polina.setBalance(0);
+        System.out.println(polina.getBalance());
 //        Human artur = new Human();
 //        artur.name = "Artur";
 //        artur.weight = 72.2;
