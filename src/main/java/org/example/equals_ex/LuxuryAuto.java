@@ -107,4 +107,6 @@ public class LuxuryAuto {
     public int hashCode() {
         return Objects.hash(model, manufactureYear , price);
     }
+
+
 }
